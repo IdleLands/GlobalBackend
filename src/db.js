@@ -22,6 +22,10 @@ class Database {
         this.$players = db.collection('player');
         this.$guilds = db.collection('guild');
 
+        this.$inventory = db.collection('inventory');
+        this.$collectibles = db.collection('collectibles');
+        this.$achievements = db.collection('achievements');
+
         resolve();
 
       } catch(e) {
