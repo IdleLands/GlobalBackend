@@ -106,7 +106,7 @@ const allQueries = [
       return {
         name: get(x, 'owner'),
         value: get(x, 'statistics.Profession.Bard.AbilityUses'),
-        exactValue: get(x, 'statistics.Profession.Bard.AbilityUses').toLocaleString + ' Uses'
+        exactValue: get(x, 'statistics.Profession.Bard.AbilityUses').toLocaleString() + ' Uses'
       };
     }
   },
