@@ -1,0 +1,30 @@
+{
+  "name": "globalserver",
+  "version": "1.0.0",
+  "description": "A server for idlelands/global",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "nodemon --exec node -- index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idlelands/globalserver.git"
+  },
+  "author": "Kyle Kemp <kyle@seiyria.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/idlelands/globalserver/issues"
+  },
+  "homepage": "https://github.com/idlelands/globalserver#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "mongodb": "^3.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
