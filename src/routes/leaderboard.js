@@ -71,198 +71,198 @@ const allQueries = [
   
   {
     name: 'Most "Pet Phenomemon" uses (Archer)',
-		query: { 'statistics.Profession.Archer.AbilityUses': { $gt: 0 } },
-		fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Archer.AbilityUses': 1 },
-		params: { sort: { 'statistics.Profession.Archer.AbilityUses': -1 }, limit: RUNNER_UPS },
-		formatter: (x) => {
-			return {
-				name: get(x, 'owner'),
-				value: `${numeral(get(x, 'statistics.Profession.Archer.AbilityUses'))} Uses`,
-				exactValue: get(x, 'statistics.Profession.Archer.AbilityUses').toLocaleString()
-			};
-		}
+    query: { 'statistics.Profession.Archer.AbilityUses': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Archer.AbilityUses': 1 },
+    params: { sort: { 'statistics.Profession.Archer.AbilityUses': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: `${numeral(get(x, 'statistics.Profession.Archer.AbilityUses'))} Uses`,
+        exactValue: get(x, 'statistics.Profession.Archer.AbilityUses').toLocaleString()
+      };
+    }
   },
   
   {
     name: 'Most "Duel" uses (Barbarian)',
-		query: { 'statistics.Profession.Barbarian.AbilityUses': { $gt: 0 } },
-		fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Barbarian.AbilityUses': 1 },
-		params: { sort: { 'statistics.Profession.Barbarian.AbilityUses': -1 }, limit: RUNNER_UPS },
-		formatter: (x) => {
-			return {
-				name: get(x, 'owner'),
-				value: `${numeral(get(x, 'statistics.Profession.Barbarian.AbilityUses'))} Uses`,
-				exactValue: get(x, 'statistics.Profession.Barbarian.AbilityUses').toLocaleString()
-			};
-		}
+    query: { 'statistics.Profession.Barbarian.AbilityUses': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Barbarian.AbilityUses': 1 },
+    params: { sort: { 'statistics.Profession.Barbarian.AbilityUses': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: `${numeral(get(x, 'statistics.Profession.Barbarian.AbilityUses'))} Uses`,
+        exactValue: get(x, 'statistics.Profession.Barbarian.AbilityUses').toLocaleString()
+      };
+    }
   },
   
   {
     name: 'Most "Orchestra" uses (Bard)',
-		query: { 'statistics.Profession.Bard.AbilityUses': { $gt: 0 } },
-		fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Bard.AbilityUses': 1 },
-		params: { sort: { 'statistics.Profession.Bard.AbilityUses': -1 }, limit: RUNNER_UPS },
-		formatter: (x) => {
-			return {
-				name: get(x, 'owner'),
-				value: `${numeral(get(x, 'statistics.Profession.Bard.AbilityUses'))} Uses`,
-				exactValue: get(x, 'statistics.Profession.Bard.AbilityUses').toLocaleString()
-			};
-		}
+    query: { 'statistics.Profession.Bard.AbilityUses': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Bard.AbilityUses': 1 },
+    params: { sort: { 'statistics.Profession.Bard.AbilityUses': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: `${numeral(get(x, 'statistics.Profession.Bard.AbilityUses'))} Uses`,
+        exactValue: get(x, 'statistics.Profession.Bard.AbilityUses').toLocaleString()
+      };
+    }
   },
   
   {
     name: 'Most "Hack The System" uses (Bitomancer)',
-		query: { 'statistics.Profession.Bitomancer.AbilityUses': { $gt: 0 } },
-		fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Bitomancer.AbilityUses': 1 },
-		params: { sort: { 'statistics.Profession.Bitomancer.AbilityUses': -1 }, limit: RUNNER_UPS },
-		formatter: (x) => {
-			return {
-				name: get(x, 'owner'),
-				value: `${numeral(get(x, 'statistics.Profession.Bitomancer.AbilityUses'))} Uses`,
-				exactValue: get(x, 'statistics.Profession.Bitomancer.AbilityUses').toLocaleString()
-			};
-		}
+    query: { 'statistics.Profession.Bitomancer.AbilityUses': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Bitomancer.AbilityUses': 1 },
+    params: { sort: { 'statistics.Profession.Bitomancer.AbilityUses': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: `${numeral(get(x, 'statistics.Profession.Bitomancer.AbilityUses'))} Uses`,
+        exactValue: get(x, 'statistics.Profession.Bitomancer.AbilityUses').toLocaleString()
+      };
+    }
   },
   
   {
     name: 'Most "Experiencer" uses (Fighter)',
-		query: { 'statistics.Profession.Fighter.AbilityUses': { $gt: 0 } },
-		fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Fighter.AbilityUses': 1 },
-		params: { sort: { 'statistics.Profession.Fighter.AbilityUses': -1 }, limit: RUNNER_UPS },
-		formatter: (x) => {
-			return {
-				name: get(x, 'owner'),
-				value: `${numeral(get(x, 'statistics.Profession.Fighter.AbilityUses'))} Uses`,
-				exactValue: get(x, 'statistics.Profession.Fighter.AbilityUses').toLocaleString()
-			};
-		}
+    query: { 'statistics.Profession.Fighter.AbilityUses': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Fighter.AbilityUses': 1 },
+    params: { sort: { 'statistics.Profession.Fighter.AbilityUses': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: `${numeral(get(x, 'statistics.Profession.Fighter.AbilityUses'))} Uses`,
+        exactValue: get(x, 'statistics.Profession.Fighter.AbilityUses').toLocaleString()
+      };
+    }
   },
   
   {
     name: 'Most "Generalize" uses (Generalist)',
-		query: { 'statistics.Profession.Generalist.AbilityUses': { $gt: 0 } },
-		fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Generalist.AbilityUses': 1 },
-		params: { sort: { 'statistics.Profession.Generalist.AbilityUses': -1 }, limit: RUNNER_UPS },
-		formatter: (x) => {
-			return {
-				name: get(x, 'owner'),
-				value: `${numeral(get(x, 'statistics.Profession.Generalist.AbilityUses'))} Uses`,
-				exactValue: get(x, 'statistics.Profession.Generalist.AbilityUses').toLocaleString()
-			};
-		}
+    query: { 'statistics.Profession.Generalist.AbilityUses': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Generalist.AbilityUses': 1 },
+    params: { sort: { 'statistics.Profession.Generalist.AbilityUses': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: `${numeral(get(x, 'statistics.Profession.Generalist.AbilityUses'))} Uses`,
+        exactValue: get(x, 'statistics.Profession.Generalist.AbilityUses').toLocaleString()
+      };
+    }
   },
   
   {
     name: 'Most "Jest" uses (Jester)',
-		query: { 'statistics.Profession.Jester.AbilityUses': { $gt: 0 } },
-		fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Jester.AbilityUses': 1 },
-		params: { sort: { 'statistics.Profession.Jester.AbilityUses': -1 }, limit: RUNNER_UPS },
-		formatter: (x) => {
-			return {
-				name: get(x, 'owner'),
-				value: `${numeral(get(x, 'statistics.Profession.Jester.AbilityUses'))} Uses`,
-				exactValue: get(x, 'statistics.Profession.Jester.AbilityUses').toLocaleString()
-			};
-		}
+    query: { 'statistics.Profession.Jester.AbilityUses': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Jester.AbilityUses': 1 },
+    params: { sort: { 'statistics.Profession.Jester.AbilityUses': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: `${numeral(get(x, 'statistics.Profession.Jester.AbilityUses'))} Uses`,
+        exactValue: get(x, 'statistics.Profession.Jester.AbilityUses').toLocaleString()
+      };
+    }
   },
   
   {
     name: 'Most "Alchemy" uses (Mage)',
-		query: { 'statistics.Profession.Mage.AbilityUses': { $gt: 0 } },
-		fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Mage.AbilityUses': 1 },
-		params: { sort: { 'statistics.Profession.Mage.AbilityUses': -1 }, limit: RUNNER_UPS },
-		formatter: (x) => {
-			return {
-				name: get(x, 'owner'),
-				value: `${numeral(get(x, 'statistics.Profession.Mage.AbilityUses'))} Uses`,
-				exactValue: get(x, 'statistics.Profession.Mage.AbilityUses').toLocaleString()
-			};
-		}
+    query: { 'statistics.Profession.Mage.AbilityUses': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Mage.AbilityUses': 1 },
+    params: { sort: { 'statistics.Profession.Mage.AbilityUses': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: `${numeral(get(x, 'statistics.Profession.Mage.AbilityUses'))} Uses`,
+        exactValue: get(x, 'statistics.Profession.Mage.AbilityUses').toLocaleString()
+      };
+    }
   },
   
   {
     name: 'Most "Tempt Fate" uses (MagicalMonster)',
-		query: { 'statistics.Profession.MagicalMonster.AbilityUses': { $gt: 0 } },
-		fields: { ...ALWAYS_FIELDS, 'statistics.Profession.MagicalMonster.AbilityUses': 1 },
-		params: { sort: { 'statistics.Profession.MagicalMonster.AbilityUses': -1 }, limit: RUNNER_UPS },
-		formatter: (x) => {
-			return {
-				name: get(x, 'owner'),
-				value: `${numeral(get(x, 'statistics.Profession.MagicalMonster.AbilityUses'))} Uses`,
-				exactValue: get(x, 'statistics.Profession.MagicalMonster.AbilityUses').toLocaleString()
-			};
-		}
+    query: { 'statistics.Profession.MagicalMonster.AbilityUses': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Profession.MagicalMonster.AbilityUses': 1 },
+    params: { sort: { 'statistics.Profession.MagicalMonster.AbilityUses': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: `${numeral(get(x, 'statistics.Profession.MagicalMonster.AbilityUses'))} Uses`,
+        exactValue: get(x, 'statistics.Profession.MagicalMonster.AbilityUses').toLocaleString()
+      };
+    }
   },
   
   {
     name: 'Most "Swap Fiend" uses (Monster)',
-		query: { 'statistics.Profession.Monster.AbilityUses': { $gt: 0 } },
-		fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Monster.AbilityUses': 1 },
-		params: { sort: { 'statistics.Profession.Monster.AbilityUses': -1 }, limit: RUNNER_UPS },
-		formatter: (x) => {
-			return {
-				name: get(x, 'owner'),
-				value: `${numeral(get(x, 'statistics.Profession.Monster.AbilityUses'))} Uses`,
-				exactValue: get(x, 'statistics.Profession.Monster.AbilityUses').toLocaleString()
-			};
-		}
+    query: { 'statistics.Profession.Monster.AbilityUses': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Monster.AbilityUses': 1 },
+    params: { sort: { 'statistics.Profession.Monster.AbilityUses': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: `${numeral(get(x, 'statistics.Profession.Monster.AbilityUses'))} Uses`,
+        exactValue: get(x, 'statistics.Profession.Monster.AbilityUses').toLocaleString()
+      };
+    }
   },
   
   {
     name: 'Most "Bone Fiend" uses (Necromancer)',
-		query: { 'statistics.Profession.Necromancer.AbilityUses': { $gt: 0 } },
-		fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Necromancer.AbilityUses': 1 },
-		params: { sort: { 'statistics.Profession.Necromancer.AbilityUses': -1 }, limit: RUNNER_UPS },
-		formatter: (x) => {
-			return {
-				name: get(x, 'owner'),
-				value: `${numeral(get(x, 'statistics.Profession.Necromancer.AbilityUses'))} Uses`,
-				exactValue: get(x, 'statistics.Profession.Necromancer.AbilityUses').toLocaleString()
-			};
-		}
+    query: { 'statistics.Profession.Necromancer.AbilityUses': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Necromancer.AbilityUses': 1 },
+    params: { sort: { 'statistics.Profession.Necromancer.AbilityUses': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: `${numeral(get(x, 'statistics.Profession.Necromancer.AbilityUses'))} Uses`,
+        exactValue: get(x, 'statistics.Profession.Necromancer.AbilityUses').toLocaleString()
+      };
+    }
   },
   
   {
     name: 'Most "Pillage" uses (Pirate)',
-		query: { 'statistics.Profession.Pirate.AbilityUses': { $gt: 0 } },
-		fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Pirate.AbilityUses': 1 },
-		params: { sort: { 'statistics.Profession.Pirate.AbilityUses': -1 }, limit: RUNNER_UPS },
-		formatter: (x) => {
-			return {
-				name: get(x, 'owner'),
-				value: `${numeral(get(x, 'statistics.Profession.Pirate.AbilityUses'))} Uses`,
-				exactValue: get(x, 'statistics.Profession.Pirate.AbilityUses').toLocaleString()
-			};
-		}
+    query: { 'statistics.Profession.Pirate.AbilityUses': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Pirate.AbilityUses': 1 },
+    params: { sort: { 'statistics.Profession.Pirate.AbilityUses': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: `${numeral(get(x, 'statistics.Profession.Pirate.AbilityUses'))} Uses`,
+        exactValue: get(x, 'statistics.Profession.Pirate.AbilityUses').toLocaleString()
+      };
+    }
   },
   
   {
     name: 'Most "Good Luck" uses (Rogue)',
-		query: { 'statistics.Profession.Rogue.AbilityUses': { $gt: 0 } },
-		fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Rogue.AbilityUses': 1 },
-		params: { sort: { 'statistics.Profession.Rogue.AbilityUses': -1 }, limit: RUNNER_UPS },
-		formatter: (x) => {
-			return {
-				name: get(x, 'owner'),
-				value: `${numeral(get(x, 'statistics.Profession.Rogue.AbilityUses'))} Uses`,
-				exactValue: get(x, 'statistics.Profession.Rogue.AbilityUses').toLocaleString()
-			};
-		}
+    query: { 'statistics.Profession.Rogue.AbilityUses': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Rogue.AbilityUses': 1 },
+    params: { sort: { 'statistics.Profession.Rogue.AbilityUses': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: `${numeral(get(x, 'statistics.Profession.Rogue.AbilityUses'))} Uses`,
+        exactValue: get(x, 'statistics.Profession.Rogue.AbilityUses').toLocaleString()
+      };
+    }
   },
   
   {
     name: 'Most "Panhandle" uses (SandwichArtist)',
-		query: { 'statistics.Profession.SandwichArtist.AbilityUses': { $gt: 0 } },
-		fields: { ...ALWAYS_FIELDS, 'statistics.Profession.SandwichArtist.AbilityUses': 1 },
-		params: { sort: { 'statistics.Profession.SandwichArtist.AbilityUses': -1 }, limit: RUNNER_UPS },
-		formatter: (x) => {
-			return {
-				name: get(x, 'owner'),
-				value: `${numeral(get(x, 'statistics.Profession.SandwichArtist.AbilityUses'))} Uses`,
-				exactValue: get(x, 'statistics.Profession.SandwichArtist.AbilityUses').toLocaleString()
-			};
-		}
+    query: { 'statistics.Profession.SandwichArtist.AbilityUses': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Profession.SandwichArtist.AbilityUses': 1 },
+    params: { sort: { 'statistics.Profession.SandwichArtist.AbilityUses': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: `${numeral(get(x, 'statistics.Profession.SandwichArtist.AbilityUses'))} Uses`,
+        exactValue: get(x, 'statistics.Profession.SandwichArtist.AbilityUses').toLocaleString()
+      };
+    }
   }
 
 
