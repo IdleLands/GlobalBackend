@@ -18,7 +18,7 @@ const allQueries = [
       return {
         name: get(x, 'owner'),
         value: get(x, 'statistics.Character.Ticks', 0),
-        exactValue: get(x, 'statistics.Character.Ticks').toLocaleString()
+        exactValue: get(x, 'statistics.Character.Ticks').toLocaleString() + ' Ticks'
       };
     }
   },
@@ -32,7 +32,7 @@ const allQueries = [
       return {
         name: get(x, 'owner'),
         value: get(x, 'statistics.Character.Experience.Levels', 0),
-        exactValue: get(x, 'statistics.Character.Experience.Levels').toLocaleString()
+        exactValue: get(x, 'statistics.Character.Experience.Levels').toLocaleString() + ' Levels'
       };
     }
   },
@@ -46,7 +46,7 @@ const allQueries = [
       return {
         name: get(x, 'owner'),
         value: get(x, 'statistics.Character.Events', 0),
-        exactValue: get(x, 'statistics.Character.Events').toLocaleString()
+        exactValue: get(x, 'statistics.Character.Events').toLocaleString() + ' Events'
       };
     }
   },
@@ -62,7 +62,7 @@ const allQueries = [
       return {
         name: get(x, 'owner'),
         value: get(x, 'statistics.Character.Injury.Receive', 0),
-        exactValue: get(x, 'statistics.Character.Injury.Receive').toLocaleString()
+        exactValue: get(x, 'statistics.Character.Injury.Receive').toLocaleString() + ' Injuries'
       };
     }
   }
