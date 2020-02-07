@@ -316,7 +316,7 @@ const allQueries = [
 
   {
     name: 'Protection Projection',
-    description: "Most Cure Injury uses",
+    description: "Cleric",
     query: { 'statistics.Character.Injury.Cure': { $gt: 0 } },
     fields: { ...ALWAYS_FIELDS, 'statistics.Character.Injury.Cure': 1 },
     params: { sort: { 'statistics.Character.Injury.Cure': -1 }, limit: RUNNER_UPS },
