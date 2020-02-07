@@ -112,7 +112,7 @@ const allQueries = [
       };
     }
   },
-
+  
   {
     name: 'Yo Mama',
     description: 'Norkos Dungeon -8: Lava Lake steps',
@@ -154,6 +154,21 @@ const allQueries = [
         name: get(x, 'owner'),
         value: get(x, 'statistics.Event.Party.Create', 0),
         exactValue: get(x, 'statistics.Event.Party.Create').toLocaleString()
+      };
+    }
+  },
+  
+  {
+    name: 'Settle Down Already',
+    description: 'Most Logins',
+    query: { 'statistics.Game.Logins': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Game.Logins': 1 },
+    params: { sort: { 'statistics.Game.Logins': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Game.Logins', 0),
+        exactValue: get(x, 'statistics.Game.Logins').toLocaleString() + ' Logins'
       };
     }
   },
@@ -223,7 +238,8 @@ const allQueries = [
   { cat: 'Combat Leaders' },
 
   {
-    name: 'Most Injured',
+    name: 'A Bandaid Won\'t Cut It',
+    description: 'Most Injured',
     query: { 'statistics.Character.Injury.Receive': { $gt: 0 } },
     fields: { ...ALWAYS_FIELDS, 'statistics.Character.Injury.Receive': 1 },
     params: { sort: { 'statistics.Character.Injury.Receive': -1 }, limit: RUNNER_UPS },
