@@ -51,6 +51,113 @@ const allQueries = [
     }
   },
 
+  { cat: 'The Best of the Best' },
+
+  {
+    name: 'You\'re Still Here?',
+    description: 'Steps Taken',
+    query: { 'statistics.Character.Movement.Steps.Normal': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Character.Movement.Steps.Normal': 1 },
+    params: { sort: { 'statistics.Character.Movement.Steps.Normal': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Character.Movement.Steps.Normal', 0),
+        exactValue: get(x, 'statistics.Character.Movement.Steps.Normal').toLocaleString() + ' Steps'
+      };
+    }
+  },
+
+  {
+    name: 'Quester Tester',
+    description: 'Quests Completed',
+    query: { 'statistics.Quest.Personal.Total': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Quest.Personal.Total': 1 },
+    params: { sort: { 'statistics.Quest.Personal.Total': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Quest.Personal.Total', 0),
+        exactValue: get(x, 'statistics.Quest.Personal.Total').toLocaleString() + ' Quests'
+      };
+    }
+  },
+
+  {
+    name: 'Quester Bester',
+    description: 'Quest Levels Earned',
+    query: { 'statistics.Quest.Personal.Level': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Quest.Personal.Level': 1 },
+    params: { sort: { 'statistics.Quest.Personal.Level': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Quest.Personal.Level', 0),
+        exactValue: get(x, 'statistics.Quest.Personal.Level').toLocaleString() + ' Levels'
+      };
+    }
+  },
+
+  {
+    name: 'Shapeshifter',
+    description: 'Class Changes',
+    query: { 'statistics.Character.ProfessionChanges': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Character.ProfessionChanges': 1 },
+    params: { sort: { 'statistics.Character.ProfessionChanges': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Character.ProfessionChanges', 0),
+        exactValue: get(x, 'statistics.Character.ProfessionChanges').toLocaleString() + ' Times'
+      };
+    }
+  },
+
+  {
+    name: 'Yo Mama',
+    description: 'Norkos Dungeon -8: Lava Lake steps',
+    query: { 'statistics.Map.Norkos Dungeon -8.Steps': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Map.Norkos Dungeon -8.Steps': 1 },
+    params: { sort: { 'statistics.Map.Norkos Dungeon -8.Steps': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Map.Norkos Dungeon -8.Steps', 0),
+        exactValue: get(x, 'statistics.Map.Norkos Dungeon -8.Steps').toLocaleString() + ' Steps'
+      };
+    }
+  },
+
+  {
+    name: 'Reading is Fundamental',
+    description: 'Scrolls Read',
+    query: { 'statistics.Item.Use.BuffScroll': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Item.Use.BuffScroll': 1 },
+    params: { sort: { 'statistics.Item.Use.BuffScroll': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Item.Use.BuffScroll', 0),
+        exactValue: get(x, 'statistics.Item.Use.BuffScroll').toLocaleString() + ' Scrolls'
+      };
+    }
+  },
+
+  {
+    name: 'First Among Equals',
+    description: 'Most parties formed as Leader',
+    query: { 'statistics.Event.Party.Create': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Event.Party.Create': 1 },
+    params: { sort: { 'statistics.Event.Party.Create': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Event.Party.Create', 0),
+        exactValue: get(x, 'statistics.Event.Party.Create').toLocaleString()
+      };
+    }
+  },
+
   { cat: 'Combat Leaders' },
 
   {
@@ -266,6 +373,7 @@ const allQueries = [
   }
 
 
+
 ];
 
 exports.route = (app) => {
@@ -284,6 +392,7 @@ exports.route = (app) => {
       if(x.cat) return x;
 
       return {
+        description: x.description || '',
         name: x.name,
         results: x.arr.map(y => x.formatter(y))
       };
