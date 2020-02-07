@@ -220,21 +220,6 @@ const allQueries = [
     }
   },
 
-  {
-    name: 'Can\'t See a Damn Thing',
-    description: 'Most Attacks Missed',
-    query: { 'statistics.Combat.All.Give.Miss': { $gt: 0 } },
-    fields: { ...ALWAYS_FIELDS, 'statistics.Combat.All.Give.Miss': 1 },
-    params: { sort: { 'statistics.Combat.All.Give.Miss': -1 }, limit: RUNNER_UPS },
-    formatter: (x) => {
-      return {
-        name: get(x, 'owner'),
-        value: get(x, 'statistics.Combat.All.Give.Miss', 0),
-        exactValue: get(x, 'statistics.Combat.All.Give.Miss').toLocaleString() + ' Misses'
-      };
-    }
-  },
-
   { cat: 'Combat Leaders' },
 
   {
@@ -248,6 +233,21 @@ const allQueries = [
         name: get(x, 'owner'),
         value: get(x, 'statistics.Character.Injury.Receive', 0),
         exactValue: get(x, 'statistics.Character.Injury.Receive').toLocaleString() + ' Injuries'
+      };
+    }
+  },
+
+  {
+    name: 'Can\'t See a Damn Thing',
+    description: 'Most Attacks Missed',
+    query: { 'statistics.Combat.All.Give.Miss': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Combat.All.Give.Miss': 1 },
+    params: { sort: { 'statistics.Combat.All.Give.Miss': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Combat.All.Give.Miss', 0),
+        exactValue: get(x, 'statistics.Combat.All.Give.Miss').toLocaleString() + ' Misses'
       };
     }
   },
