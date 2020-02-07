@@ -158,6 +158,68 @@ const allQueries = [
     }
   },
 
+  { cat: 'The Best of the Rest' },
+
+  {
+    name: 'Power Underwhelming',
+    description: 'Most Deaths',
+    query: { 'statistics.Combat.All.Times.Lose': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Combat.All.Times.Lose': 1 },
+    params: { sort: { 'statistics.Combat.All.Times.Lose': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Combat.All.Times.Lose', 0),
+        exactValue: get(x, 'statistics.Combat.All.Times.Lose').toLocaleString() + ' Deaths'
+      };
+    }
+  },
+
+  {
+    name: 'I Put a Spell on You',
+    description: 'Most Witch Events',
+    query: { 'statistics.Event.Witch.Times': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Event.Witch.Times': 1 },
+    params: { sort: { 'statistics.Event.Witch.Times': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Event.Witch.Times', 0),
+        exactValue: get(x, 'statistics.Event.Witch.Times').toLocaleString() + ' Times'
+      };
+    }
+  },
+
+  {
+    name: 'Garbage Man\'s Lament',
+    description: 'Most ForsakeItem Events',
+    query: { 'statistics.Event.ForsakeItem.Times': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Event.ForsakeItem.Times': 1 },
+    params: { sort: { 'statistics.Event.ForsakeItem.Times': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Event.ForsakeItem.Times', 0),
+        exactValue: get(x, 'statistics.Event.ForsakeItem.Times').toLocaleString() + ' Times'
+      };
+    }
+  },
+
+  {
+    name: 'Can\'t See a Damn Thing',
+    description: 'Most Attacks Missed',
+    query: { 'statistics.Combat.All.Give.Miss': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Combat.All.Give.Miss': 1 },
+    params: { sort: { 'statistics.Combat.All.Give.Miss': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Combat.All.Give.Miss', 0),
+        exactValue: get(x, 'statistics.Combat.All.Give.Miss').toLocaleString() + ' Misses'
+      };
+    }
+  },
+
   { cat: 'Combat Leaders' },
 
   {
@@ -177,7 +239,8 @@ const allQueries = [
   { cat: 'Ability Leaders' },
   
   {
-    name: 'Mastodon Phenomenon (Archer)',
+    name: 'Mastodon Phenomenon',
+    description: "Archer",
     query: { 'statistics.Profession.Archer.AbilityUses': { $gt: 0 } },
     fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Archer.AbilityUses': 1 },
     params: { sort: { 'statistics.Profession.Archer.AbilityUses': -1 }, limit: RUNNER_UPS },
@@ -191,7 +254,8 @@ const allQueries = [
   },
   
   {
-    name: 'Grueling Dueling (Barbarian)',
+    name: 'Grueling Dueling',
+    description: "Barbarian",
     query: { 'statistics.Profession.Barbarian.AbilityUses': { $gt: 0 } },
     fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Barbarian.AbilityUses': 1 },
     params: { sort: { 'statistics.Profession.Barbarian.AbilityUses': -1 }, limit: RUNNER_UPS },
@@ -205,7 +269,8 @@ const allQueries = [
   },
   
   {
-    name: 'Enormous Performance (Bard)',
+    name: 'Enormous Performance',
+    description: "Bard",
     query: { 'statistics.Profession.Bard.AbilityUses': { $gt: 0 } },
     fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Bard.AbilityUses': 1 },
     params: { sort: { 'statistics.Profession.Bard.AbilityUses': -1 }, limit: RUNNER_UPS },
@@ -219,7 +284,8 @@ const allQueries = [
   },
   
   {
-    name: 'Black Hat Fast Track (Bitomancer)',
+    name: 'Black Hat Fast Track',
+    description: "Bitomancer",
     query: { 'statistics.Profession.Bitomancer.AbilityUses': { $gt: 0 } },
     fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Bitomancer.AbilityUses': 1 },
     params: { sort: { 'statistics.Profession.Bitomancer.AbilityUses': -1 }, limit: RUNNER_UPS },
@@ -233,7 +299,8 @@ const allQueries = [
   },
   
   {
-    name: 'Ranked Unthanked (Fighter)',
+    name: 'Ranked Unthanked',
+    description: "Fighter",
     query: { 'statistics.Profession.Fighter.AbilityUses': { $gt: 0 } },
     fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Fighter.AbilityUses': 1 },
     params: { sort: { 'statistics.Profession.Fighter.AbilityUses': -1 }, limit: RUNNER_UPS },
@@ -247,7 +314,8 @@ const allQueries = [
   },
   
   {
-    name: 'General General (Generalist)',
+    name: 'General General',
+    description: "Generalist",
     query: { 'statistics.Profession.Generalist.AbilityUses': { $gt: 0 } },
     fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Generalist.AbilityUses': 1 },
     params: { sort: { 'statistics.Profession.Generalist.AbilityUses': -1 }, limit: RUNNER_UPS },
@@ -261,7 +329,8 @@ const allQueries = [
   },
   
   {
-    name: 'Best Jest in the West (Jester)',
+    name: 'Best Jest in the West',
+    description: "Jester",
     query: { 'statistics.Profession.Jester.AbilityUses': { $gt: 0 } },
     fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Jester.AbilityUses': 1 },
     params: { sort: { 'statistics.Profession.Jester.AbilityUses': -1 }, limit: RUNNER_UPS },
@@ -275,7 +344,8 @@ const allQueries = [
   },
   
   {
-    name: 'Alchemy Apogee (Mage)',
+    name: 'Alchemy Apogee',
+    description: "Mage",
     query: { 'statistics.Profession.Mage.AbilityUses': { $gt: 0 } },
     fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Mage.AbilityUses': 1 },
     params: { sort: { 'statistics.Profession.Mage.AbilityUses': -1 }, limit: RUNNER_UPS },
@@ -289,7 +359,8 @@ const allQueries = [
   },
   
   {
-    name: 'Frustration Temptation (MagicalMonster)',
+    name: 'Frustration Temptation',
+    description: "MagicalMonster",
     query: { 'statistics.Profession.MagicalMonster.AbilityUses': { $gt: 0 } },
     fields: { ...ALWAYS_FIELDS, 'statistics.Profession.MagicalMonster.AbilityUses': 1 },
     params: { sort: { 'statistics.Profession.MagicalMonster.AbilityUses': -1 }, limit: RUNNER_UPS },
@@ -303,7 +374,8 @@ const allQueries = [
   },
   
   {
-    name: 'Swap Shop (Monster)',
+    name: 'Swap Shop',
+    description: "Monster",
     query: { 'statistics.Profession.Monster.AbilityUses': { $gt: 0 } },
     fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Monster.AbilityUses': 1 },
     params: { sort: { 'statistics.Profession.Monster.AbilityUses': -1 }, limit: RUNNER_UPS },
@@ -317,7 +389,8 @@ const allQueries = [
   },
   
   {
-    name: 'Welcome to the Bone Zone (Necromancer)',
+    name: 'Welcome to the Bone Zone',
+    description: "Necromancer",
     query: { 'statistics.Profession.Necromancer.AbilityUses': { $gt: 0 } },
     fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Necromancer.AbilityUses': 1 },
     params: { sort: { 'statistics.Profession.Necromancer.AbilityUses': -1 }, limit: RUNNER_UPS },
@@ -331,7 +404,8 @@ const allQueries = [
   },
   
   {
-    name: 'Villager Pillager (Pirate)',
+    name: 'Villager Pillager',
+    description: "Pirate",
     query: { 'statistics.Profession.Pirate.AbilityUses': { $gt: 0 } },
     fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Pirate.AbilityUses': 1 },
     params: { sort: { 'statistics.Profession.Pirate.AbilityUses': -1 }, limit: RUNNER_UPS },
@@ -345,7 +419,8 @@ const allQueries = [
   },
   
   {
-    name: 'Fortune Foreman (Rogue)',
+    name: 'Fortune Foreman',
+    description: "Rogue",
     query: { 'statistics.Profession.Rogue.AbilityUses': { $gt: 0 } },
     fields: { ...ALWAYS_FIELDS, 'statistics.Profession.Rogue.AbilityUses': 1 },
     params: { sort: { 'statistics.Profession.Rogue.AbilityUses': -1 }, limit: RUNNER_UPS },
@@ -359,7 +434,8 @@ const allQueries = [
   },
   
   {
-    name: 'Yeast Beast of the East (SandwichArtist)',
+    name: 'Yeast Beast of the East',
+    description: "SandwichArtist",
     query: { 'statistics.Profession.SandwichArtist.AbilityUses': { $gt: 0 } },
     fields: { ...ALWAYS_FIELDS, 'statistics.Profession.SandwichArtist.AbilityUses': 1 },
     params: { sort: { 'statistics.Profession.SandwichArtist.AbilityUses': -1 }, limit: RUNNER_UPS },
@@ -370,8 +446,99 @@ const allQueries = [
         exactValue: get(x, 'statistics.Profession.SandwichArtist.AbilityUses').toLocaleString() + ' Uses'
       };
     }
-  }
+  },
 
+  { cat: "Others" },
+
+  {
+    name: 'Yes Man',
+    description: 'Most Affirmed Decisions',
+    query: { 'statistics.Character.Choose.Personality.Affirmer': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Character.Choose.Personality.Affirmer': 1 },
+    params: { sort: { 'statistics.Character.Choose.Personality.Affirmer': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Character.Choose.Personality.Affirmer'),
+        exactValue: get(x, 'statistics.Character.Choose.Personality.Affirmer').toLocaleString()
+      };
+    }
+  },
+
+  {
+    name: 'Naysayer',
+    description: 'Most Denied Decisions',
+    query: { 'statistics.Character.Choose.Personality.Denier': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Character.Choose.Personality.Denier': 1 },
+    params: { sort: { 'statistics.Character.Choose.Personality.Denier': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Character.Choose.Personality.Denier'),
+        exactValue: get(x, 'statistics.Character.Choose.Personality.Denier').toLocaleString()
+      };
+    }
+  },
+
+  {
+    name: 'Meh, whatever',
+    description: 'Most Indecisive Decisions',
+    query: { 'statistics.Character.Choose.Personality.Indecisive': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Character.Choose.Personality.Indecisive': 1 },
+    params: { sort: { 'statistics.Character.Choose.Personality.Indecisive': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Character.Choose.Personality.Indecisive'),
+        exactValue: get(x, 'statistics.Character.Choose.Personality.Indecisive').toLocaleString()
+      };
+    }
+  },
+
+  {
+    name: 'Beam Me Up, Scotty',
+    description: 'Most teleporters',
+    query: { 'statistics.Character.Movement.Teleport': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Character.Movement.Teleport': 1 },
+    params: { sort: { 'statistics.Character.Movement.Teleport': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Character.Movement.Teleport'),
+        exactValue: get(x, 'statistics.Character.Movement.Teleport').toLocaleString() + " Teleports"
+      };
+    }
+  },
+
+  {
+    name: 'It\'s Getting Hot in Here',
+    description: 'Most items unequipped',
+    query: { 'statistics.Item.Unequip.Times': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Item.Unequip.Times': 1 },
+    params: { sort: { 'statistics.Item.Unequip.Times': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Item.Unequip.Times'),
+        exactValue: get(x, 'statistics.Item.Unequip.Times').toLocaleString() + " Times"
+      };
+    }
+  },
+
+  {
+    name: 'Department of Redundancy Department',
+    description: 'Most duplicate items found',
+    query: { 'statistics.Event.FindItem.Duplicate': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Event.FindItem.Duplicate': 1 },
+    params: { sort: { 'statistics.Event.FindItem.Duplicate': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Event.FindItem.Duplicate'),
+        exactValue: get(x, 'statistics.Event.FindItem.Duplicate').toLocaleString() + " Items"
+      };
+    }
+  }
 
 
 ];
