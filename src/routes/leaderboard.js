@@ -297,6 +297,21 @@ const allQueries = [
       };
     }
   },
+
+  {
+    name: 'Protection Projection',
+    description: "Most Cure Injury uses",
+    query: { 'statistics.Character.Injury.Cure': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Character.Injury.Cure': 1 },
+    params: { sort: { 'statistics.Character.Injury.Cure': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Character.Injury.Cure'),
+        exactValue: get(x, 'statistics.Character.Injury.Cure').toLocaleString() + ' Times'
+      };
+    }
+  },
   
   {
     name: 'Ranked Unthanked',
