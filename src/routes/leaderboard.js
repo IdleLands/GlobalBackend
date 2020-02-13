@@ -527,6 +527,21 @@ const allQueries = [
   },
 
   {
+    name: 'Fanciest Pants',
+    description: 'Most Fancypants Decisions',
+    query: { 'statistics.Character.Choose.Personality.Fancypants': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Character.Choose.Personality.Fancypants': 1 },
+    params: { sort: { 'statistics.Character.Choose.Personality.Fancypants': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Character.Choose.Personality.Fancypants'),
+        exactValue: get(x, 'statistics.Character.Choose.Personality.Fancypants').toLocaleString()
+      };
+    }
+  },
+
+  {
     name: 'Beam Me Up, Scotty',
     description: 'Most teleporters',
     query: { 'statistics.Character.Movement.Teleport': { $gt: 0 } },
