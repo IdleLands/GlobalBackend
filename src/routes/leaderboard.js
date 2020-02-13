@@ -157,6 +157,21 @@ const allQueries = [
       };
     }
   },
+
+  {
+    name: 'Jailbird',
+    description: 'Norkos Jail Steps',
+    query: { 'statistics.Map.Norkos.Region.Jail': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Map.Norkos.Region.Jail': 1 },
+    params: { sort: { 'statistics.Map.Norkos.Region.Jail': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Map.Norkos.Region.Jail', 0),
+        exactValue: get(x, 'statistics.Map.Norkos.Region.Jail').toLocaleString() + ' Steps'
+      };
+    }
+  },
   
   {
     name: 'Settle Down Already',
