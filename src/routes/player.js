@@ -25,7 +25,8 @@ exports.route = (app) => {
                       availableGenders: 1,
                       availableTitles: 1,
                       lastLoc: 1,
-                      lastOnline: 1
+                      lastOnline: 1,
+                      guildName: 1
                   }
               }
           );
