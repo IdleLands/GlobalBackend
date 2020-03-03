@@ -51,6 +51,21 @@ const allQueries = [
     }
   },
 
+  {
+    name: 'Most Festive',
+    description: 'Most ILP spent on festivals',
+    query: { 'statistics.Game.Premium.ILP.FestivalSpend': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Game.Premium.ILP.FestivalSpend': 1 },
+    params: { sort: { 'statistics.Game.Premium.ILP.FestivalSpend': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Game.Premium.ILP.FestivalSpend', 0),
+        exactValue: get(x, 'statistics.Game.Premium.ILP.FestivalSpend').toLocaleString() + ' ILP'
+      };
+    }
+  },
+
   { cat: 'The Best of the Best' },
 
   {
