@@ -202,6 +202,21 @@ const allQueries = [
       };
     }
   },
+  
+  {
+    name: 'The Real Monster',
+    description: 'Most Monsters Killed',
+    query: { 'statistics.Combat.All.Kill.Monster': { $gt: 0 } },
+    fields: { ...ALWAYS_FIELDS, 'statistics.Combat.All.Kill.Monster': 1 },
+    params: { sort: { 'statistics.Combat.All.Kill.Monsters': -1 }, limit: RUNNER_UPS },
+    formatter: (x) => {
+      return {
+        name: get(x, 'owner'),
+        value: get(x, 'statistics.Combat.All.Kill.Monster', 0),
+        exactValue: get(x, 'statistics.Combat.All.Kill.Monster').toLocaleString() + ' Monsters'
+      };
+    }
+  },
 
   { cat: 'The Best of the Rest' },
 
