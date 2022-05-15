@@ -2,7 +2,7 @@ const { get } = require('lodash');
 
 const { DB } = require('../db');
 
-const RUNNER_UPS = 5;
+const RUNNER_UPS = 10;
 
 const ALWAYS_FIELDS = { 'owner': 1 };
 
